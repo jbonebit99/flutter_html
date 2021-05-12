@@ -16,6 +16,9 @@ Style declarationsToStyle(Map<String?, List<css.Expression>> declarations) {
         case 'background-color':
           style.backgroundColor = ExpressionMapping.expressionToColor(value.first) ?? style.backgroundColor;
           break;
+         case 'background':
+          style.backgroundColor = ExpressionMapping.expressionToColor(value.first) ?? style.backgroundColor;
+          break;
         case 'border':
           List<css.LiteralTerm?>? borderWidths = value.whereType<css.LiteralTerm>().toList();
           /// List<css.LiteralTerm> might include other values than the ones we want for [BorderSide.width], so make sure to remove those before passing it to [ExpressionMapping]
